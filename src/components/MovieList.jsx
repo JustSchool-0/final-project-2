@@ -1,7 +1,9 @@
 import MovieData from "./MovieData.jsx";
+import {useMovieResource} from "../context/MovieResourceContext.jsx";
 
-function MovieList({resource}) {
-    const movies = resource.read();
+export default function MovieList() {
+    const {movieResource} = useMovieResource();
+    const movies = movieResource.read();
 
     return (
         <ul>
@@ -11,5 +13,3 @@ function MovieList({resource}) {
         </ul>
     );
 }
-
-export default MovieList;

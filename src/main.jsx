@@ -5,6 +5,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage.jsx";
 import App from './routes/App.jsx'
 import AddMovie from "./routes/AddMovie/AddMovie.jsx";
+import Credits from "./routes/Credits.jsx";
+import {MovieResourceProvider} from "./context/MovieResourceContext.jsx";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +19,17 @@ const router = createBrowserRouter([
         element: <AddMovie/>,
         errorElement: <ErrorPage/>
     },
+    {
+        path: '/credits',
+        element: <Credits/>,
+        errorElement: <ErrorPage/>
+    },
 ]);
 
 createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router}/>
+    <StrictMode>
+        <MovieResourceProvider>
+            <RouterProvider router={router}/>
+        </MovieResourceProvider>
+    </StrictMode>
 );

@@ -4,7 +4,8 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage.jsx";
 import App from './routes/App/App.jsx'
 import Credits from "./routes/Credits.jsx";
-import Cat from "./routes/Cat/Cat.jsx";
+import Favorites from "./routes/Favorites/Favorites.jsx";
+import {StrictMode} from "react";
 
 const router = createBrowserRouter([
     {
@@ -13,8 +14,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>
     },
     {
-        path: '/cat',
-        element: <Cat/>,
+        path: '/favorites',
+        element: <Favorites/>,
         errorElement: <ErrorPage/>
     },
     {
@@ -25,5 +26,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router}/>
+    <StrictMode>
+        <RouterProvider router={router}/>
+    </StrictMode>
 );

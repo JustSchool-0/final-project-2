@@ -1,0 +1,16 @@
+img {
+  max-width: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+
+  user-select: none;
+  cursor: pointer;
+  -webkit-user-drag: none;
+
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    scale: 1.01;
+    transform: translateY(-5px);
+  }
+}

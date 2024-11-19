@@ -1,10 +1,9 @@
-import {useNavigate} from "react-router-dom";
+import Navbar from "../components/Navbar.jsx";
 
 export default function Credits() {
-    const navigate = useNavigate();
     return (
-        <div>
-            <button onClick={() => navigate('/')}>Back</button>
+        <div className="container">
+            <Navbar/>
             <h1>Credits</h1>
             <p>My cat wrote all of this. I take no credit.</p>
         </div>

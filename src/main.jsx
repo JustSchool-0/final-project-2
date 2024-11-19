@@ -1,12 +1,10 @@
 import './index.scss'
-import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ErrorPage from "./routes/ErrorPage.jsx";
-import App from './routes/App.jsx'
-import AddMovie from "./routes/AddMovie/AddMovie.jsx";
+import App from './routes/App/App.jsx'
 import Credits from "./routes/Credits.jsx";
-import {MovieResourceProvider} from "./context/MovieResourceContext.jsx";
+import Cat from "./routes/Cat/Cat.jsx";
 
 const router = createBrowserRouter([
     {
@@ -15,8 +13,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>
     },
     {
-        path: '/addmovie',
-        element: <AddMovie/>,
+        path: '/cat',
+        element: <Cat/>,
         errorElement: <ErrorPage/>
     },
     {
@@ -27,9 +25,5 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-    <StrictMode>
-        <MovieResourceProvider>
-            <RouterProvider router={router}/>
-        </MovieResourceProvider>
-    </StrictMode>
+    <RouterProvider router={router}/>
 );

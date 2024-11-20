@@ -6,17 +6,23 @@ import App from './routes/App/App.jsx'
 import Credits from "./routes/Credits.jsx";
 import Favorites from "./routes/Favorites/Favorites.jsx";
 import {StrictMode} from "react";
+import Home from "./routes/Home.jsx";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <App/>,
-        errorElement: <ErrorPage/>
-    },
-    {
-        path: '/favorites',
-        element: <Favorites/>,
-        errorElement: <ErrorPage/>
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: '/',
+                element: <Home/>
+            },
+            {
+                path: '/favorites',
+                element: <Favorites/>
+            },
+        ]
     },
     {
         path: '/credits',
